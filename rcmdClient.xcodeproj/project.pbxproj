@@ -486,6 +486,7 @@
 				E49A2A631C54D97C00FF7DD5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E49A2A641C54D97C00FF7DD5 /* Build configuration list for PBXNativeTarget "rcmdClientTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +495,7 @@
 				E49A2A661C54D97C00FF7DD5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E49A2A671C54D97C00FF7DD5 /* Build configuration list for PBXNativeTarget "rcmdClientUITests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +504,7 @@
 				E49A2A691C54D97C00FF7DD5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
