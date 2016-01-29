@@ -15,9 +15,9 @@
 		E49A2A471C54D97B00FF7DD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E49A2A451C54D97B00FF7DD5 /* LaunchScreen.storyboard */; };
 		E49A2A521C54D97C00FF7DD5 /* rcmdClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49A2A511C54D97C00FF7DD5 /* rcmdClientTests.swift */; };
 		E49A2A5D1C54D97C00FF7DD5 /* rcmdClientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49A2A5C1C54D97C00FF7DD5 /* rcmdClientUITests.swift */; };
-		E4D860671C5BB40E0065058E /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4D860661C5BB40D0065058E /* SVProgressHUD.framework */; };
-		E4D8606C1C5BB8450065058E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4D8606A1C5BB8450065058E /* Alamofire.framework */; };
-		E4D8606D1C5BB8450065058E /* PINCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4D8606B1C5BB8450065058E /* PINCache.framework */; };
+		E4B6181D1C5BD7AC00AB5E6F /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4B6181A1C5BD7AC00AB5E6F /* SVProgressHUD.framework */; };
+		E4B6181E1C5BD7AC00AB5E6F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4B6181B1C5BD7AC00AB5E6F /* Alamofire.framework */; };
+		E4B6181F1C5BD7AC00AB5E6F /* PINCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4B6181C1C5BD7AC00AB5E6F /* PINCache.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,9 +52,9 @@
 		E49A2A581C54D97C00FF7DD5 /* rcmdClientUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rcmdClientUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E49A2A5C1C54D97C00FF7DD5 /* rcmdClientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rcmdClientUITests.swift; sourceTree = "<group>"; };
 		E49A2A5E1C54D97C00FF7DD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E4D860661C5BB40D0065058E /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = rcmdClient/Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
-		E4D8606A1C5BB8450065058E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = rcmdClient/Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
-		E4D8606B1C5BB8450065058E /* PINCache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PINCache.framework; path = rcmdClient/Carthage/Build/iOS/PINCache.framework; sourceTree = "<group>"; };
+		E4B6181A1C5BD7AC00AB5E6F /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
+		E4B6181B1C5BD7AC00AB5E6F /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		E4B6181C1C5BD7AC00AB5E6F /* PINCache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PINCache.framework; path = Carthage/Build/iOS/PINCache.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,9 +62,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4D8606C1C5BB8450065058E /* Alamofire.framework in Frameworks */,
-				E4D8606D1C5BB8450065058E /* PINCache.framework in Frameworks */,
-				E4D860671C5BB40E0065058E /* SVProgressHUD.framework in Frameworks */,
+				E4B6181D1C5BD7AC00AB5E6F /* SVProgressHUD.framework in Frameworks */,
+				E4B6181E1C5BD7AC00AB5E6F /* Alamofire.framework in Frameworks */,
+				E4B6181F1C5BD7AC00AB5E6F /* PINCache.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,9 +141,9 @@
 		E4D860691C5BB6610065058E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E4D8606A1C5BB8450065058E /* Alamofire.framework */,
-				E4D8606B1C5BB8450065058E /* PINCache.framework */,
-				E4D860661C5BB40D0065058E /* SVProgressHUD.framework */,
+				E4B6181A1C5BD7AC00AB5E6F /* SVProgressHUD.framework */,
+				E4B6181B1C5BD7AC00AB5E6F /* Alamofire.framework */,
+				E4B6181C1C5BD7AC00AB5E6F /* PINCache.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -158,7 +158,7 @@
 				E49A2A331C54D97B00FF7DD5 /* Sources */,
 				E49A2A341C54D97B00FF7DD5 /* Frameworks */,
 				E49A2A351C54D97B00FF7DD5 /* Resources */,
-				E4D860681C5BB4D80065058E /* ShellScript */,
+				E4D860681C5BB4D80065058E /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -277,16 +277,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		E4D860681C5BB4D80065058E /* ShellScript */ = {
+		E4D860681C5BB4D80065058E /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/rcmdClient/Carthage/Build/iOS/SVProgressHUD.framework",
-				"$(SRCROOT)/rcmdClient/Carthage/Build/iOS/PINCache.framework",
-				"$(SRCROOT)/rcmdClient/Carthage/Build/iOS/Alamofire.framework",
 			);
+			name = "Run Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,6 +444,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/rcmdClient/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = rcmdClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -462,6 +461,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/rcmdClient/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = rcmdClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
