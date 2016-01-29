@@ -7,5 +7,4 @@ install:
 - gem install xcpretty
 - carthage bootstrap
 script:
-- set -o pipefail && xcodebuild -scheme 'rcmdClientTests' -sdk iphonesimulator test | xcpretty -c
-
+- set -o pipefail && xcodebuild -scheme 'rcmdClientTests' -destination 'platform=iOS Simulator,name=iPhone 6s'  test| xcpretty -c 
