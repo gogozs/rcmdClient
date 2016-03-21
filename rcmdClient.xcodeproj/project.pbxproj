@@ -12,6 +12,7 @@
 		E455A32C1CA033FE00F06DE7 /* MovieCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E455A32B1CA033FE00F06DE7 /* MovieCollectionViewController.swift */; };
 		E455A32E1CA0343A00F06DE7 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E455A32D1CA0343A00F06DE7 /* MovieDetailViewController.swift */; };
 		E455A3301CA0344C00F06DE7 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E455A32F1CA0344C00F06DE7 /* UserInfoViewController.swift */; };
+		E455A3321CA034EE00F06DE7 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E455A3311CA034EE00F06DE7 /* ExploreViewController.swift */; };
 		E45F85621C8D0365008E25D5 /* MovieSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45F85611C8D0365008E25D5 /* MovieSearchController.swift */; };
 		E45F85631C8D0365008E25D5 /* MovieSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45F85611C8D0365008E25D5 /* MovieSearchController.swift */; };
 		E49A2A3B1C54D97B00FF7DD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49A2A3A1C54D97B00FF7DD5 /* AppDelegate.swift */; };
@@ -47,6 +48,7 @@
 		E455A32B1CA033FE00F06DE7 /* MovieCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewController.swift; sourceTree = "<group>"; };
 		E455A32D1CA0343A00F06DE7 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		E455A32F1CA0344C00F06DE7 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		E455A3311CA034EE00F06DE7 /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		E45F85611C8D0365008E25D5 /* MovieSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieSearchController.swift; sourceTree = "<group>"; };
 		E49A2A371C54D97B00FF7DD5 /* rcmdClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rcmdClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E49A2A3A1C54D97B00FF7DD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				E49A2A3A1C54D97B00FF7DD5 /* AppDelegate.swift */,
+				E455A3311CA034EE00F06DE7 /* ExploreViewController.swift */,
 				E455A3291CA033EA00F06DE7 /* MovieTableViewController.swift */,
 				E455A32B1CA033FE00F06DE7 /* MovieCollectionViewController.swift */,
 				E455A32D1CA0343A00F06DE7 /* MovieDetailViewController.swift */,
@@ -314,6 +317,7 @@
 				E455A3301CA0344C00F06DE7 /* UserInfoViewController.swift in Sources */,
 				E455A3281CA033BF00F06DE7 /* RCMDTabBarController.swift in Sources */,
 				E455A32C1CA033FE00F06DE7 /* MovieCollectionViewController.swift in Sources */,
+				E455A3321CA034EE00F06DE7 /* ExploreViewController.swift in Sources */,
 				E45F85621C8D0365008E25D5 /* MovieSearchController.swift in Sources */,
 				E455A32E1CA0343A00F06DE7 /* MovieDetailViewController.swift in Sources */,
 				E49A2A3B1C54D97B00FF7DD5 /* AppDelegate.swift in Sources */,
