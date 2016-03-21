@@ -1,5 +1,5 @@
 //
-//  UserInfoViewController.swift
+//  TopRatedTableViewController.swift
 //  rcmdClient
 //
 //  Created by Song Zhou on 3/21/16.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class UserInfoViewController: UITableViewController {
+class TopRatedTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let userCenterStr = NSLocalizedString("user_center", comment: "")
-        self.title = userCenterStr
+        let topListStr = NSLocalizedString("top_rated", comment: "")
+        self.title = topListStr
     }
 
     override func didReceiveMemoryWarning() {

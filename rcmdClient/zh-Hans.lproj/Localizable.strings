@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  rcmdClient
+
+  Created by Song Zhou on 3/21/16
+  Copyright © 2016 Song Zhou. All rights reserved.
+*/
+
+"explore" = "探索";
+"top_rated" = "排行榜";
+"user_center" = "用户";

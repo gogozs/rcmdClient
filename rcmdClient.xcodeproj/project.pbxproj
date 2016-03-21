@@ -13,6 +13,10 @@
 		E455A32E1CA0343A00F06DE7 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E455A32D1CA0343A00F06DE7 /* MovieDetailViewController.swift */; };
 		E455A3301CA0344C00F06DE7 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E455A32F1CA0344C00F06DE7 /* UserInfoViewController.swift */; };
 		E455A3321CA034EE00F06DE7 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E455A3311CA034EE00F06DE7 /* ExploreViewController.swift */; };
+		E455A3351CA03BB500F06DE7 /* TopRatedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E455A3341CA03BB500F06DE7 /* TopRatedTableViewController.swift */; };
+		E455A3371CA03F3A00F06DE7 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = E455A3361CA03F3A00F06DE7 /* en.lproj */; };
+		E455A33F1CA03F5D00F06DE7 /* zh-Hans.lproj in Resources */ = {isa = PBXBuildFile; fileRef = E455A33E1CA03F5D00F06DE7 /* zh-Hans.lproj */; };
+		E455A3421CA04C9300F06DE7 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E455A3411CA04C9300F06DE7 /* SearchResultsViewController.swift */; };
 		E45F85621C8D0365008E25D5 /* MovieSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45F85611C8D0365008E25D5 /* MovieSearchController.swift */; };
 		E45F85631C8D0365008E25D5 /* MovieSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45F85611C8D0365008E25D5 /* MovieSearchController.swift */; };
 		E49A2A3B1C54D97B00FF7DD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49A2A3A1C54D97B00FF7DD5 /* AppDelegate.swift */; };
@@ -49,6 +53,10 @@
 		E455A32D1CA0343A00F06DE7 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		E455A32F1CA0344C00F06DE7 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		E455A3311CA034EE00F06DE7 /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		E455A3341CA03BB500F06DE7 /* TopRatedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopRatedTableViewController.swift; sourceTree = "<group>"; };
+		E455A3361CA03F3A00F06DE7 /* en.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = en.lproj; sourceTree = "<group>"; };
+		E455A33E1CA03F5D00F06DE7 /* zh-Hans.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "zh-Hans.lproj"; sourceTree = "<group>"; };
+		E455A3411CA04C9300F06DE7 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		E45F85611C8D0365008E25D5 /* MovieSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieSearchController.swift; sourceTree = "<group>"; };
 		E49A2A371C54D97B00FF7DD5 /* rcmdClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rcmdClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E49A2A3A1C54D97B00FF7DD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +102,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E455A3331CA03AFA00F06DE7 /* tabBarControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E455A3311CA034EE00F06DE7 /* ExploreViewController.swift */,
+				E455A3341CA03BB500F06DE7 /* TopRatedTableViewController.swift */,
+				E455A32F1CA0344C00F06DE7 /* UserInfoViewController.swift */,
+			);
+			name = tabBarControllers;
+			sourceTree = "<group>";
+		};
+		E455A3401CA04C6900F06DE7 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				E45F85611C8D0365008E25D5 /* MovieSearchController.swift */,
+				E455A3411CA04C9300F06DE7 /* SearchResultsViewController.swift */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
 		E49A2A2E1C54D97B00FF7DD5 = {
 			isa = PBXGroup;
 			children = (
@@ -119,16 +146,17 @@
 			isa = PBXGroup;
 			children = (
 				E49A2A3A1C54D97B00FF7DD5 /* AppDelegate.swift */,
-				E455A3311CA034EE00F06DE7 /* ExploreViewController.swift */,
-				E455A3291CA033EA00F06DE7 /* MovieTableViewController.swift */,
+				E455A3331CA03AFA00F06DE7 /* tabBarControllers */,
+				E455A3401CA04C6900F06DE7 /* Search */,
 				E455A32B1CA033FE00F06DE7 /* MovieCollectionViewController.swift */,
+				E455A3291CA033EA00F06DE7 /* MovieTableViewController.swift */,
 				E455A32D1CA0343A00F06DE7 /* MovieDetailViewController.swift */,
-				E455A32F1CA0344C00F06DE7 /* UserInfoViewController.swift */,
 				E455A3271CA033BF00F06DE7 /* RCMDTabBarController.swift */,
-				E45F85611C8D0365008E25D5 /* MovieSearchController.swift */,
 				E49A2A431C54D97B00FF7DD5 /* Assets.xcassets */,
 				E49A2A451C54D97B00FF7DD5 /* LaunchScreen.storyboard */,
 				E49A2A481C54D97B00FF7DD5 /* Info.plist */,
+				E455A33E1CA03F5D00F06DE7 /* zh-Hans.lproj */,
+				E455A3361CA03F3A00F06DE7 /* en.lproj */,
 			);
 			path = rcmdClient;
 			sourceTree = "<group>";
@@ -268,7 +296,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E49A2A471C54D97B00FF7DD5 /* LaunchScreen.storyboard in Resources */,
+				E455A3371CA03F3A00F06DE7 /* en.lproj in Resources */,
 				E49A2A441C54D97B00FF7DD5 /* Assets.xcassets in Resources */,
+				E455A33F1CA03F5D00F06DE7 /* zh-Hans.lproj in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,7 +350,9 @@
 				E455A3321CA034EE00F06DE7 /* ExploreViewController.swift in Sources */,
 				E45F85621C8D0365008E25D5 /* MovieSearchController.swift in Sources */,
 				E455A32E1CA0343A00F06DE7 /* MovieDetailViewController.swift in Sources */,
+				E455A3351CA03BB500F06DE7 /* TopRatedTableViewController.swift in Sources */,
 				E49A2A3B1C54D97B00FF7DD5 /* AppDelegate.swift in Sources */,
+				E455A3421CA04C9300F06DE7 /* SearchResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +486,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 16;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/rcmdClient/Carthage/Build/iOS",
@@ -463,6 +496,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gogozs.rcmdClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -471,6 +505,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 16;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/rcmdClient/Carthage/Build/iOS",
@@ -480,6 +515,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gogozs.rcmdClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};

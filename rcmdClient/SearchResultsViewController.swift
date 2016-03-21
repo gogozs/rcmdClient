@@ -1,5 +1,5 @@
 //
-//  MovieTableViewController.swift
+//  SearchResultsViewController.swift
 //  rcmdClient
 //
 //  Created by Song Zhou on 3/21/16.
@@ -8,10 +8,16 @@
 
 import UIKit
 
-class MovieTableViewController: UITableViewController {
+class SearchResultsViewController: UITableViewController,UISearchResultsUpdating {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,5 +37,11 @@ class MovieTableViewController: UITableViewController {
         return 0
     }
 
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        if !searchController.active {
+            return
+        }
+    }
+ 
 
 }

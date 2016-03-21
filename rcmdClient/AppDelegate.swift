@@ -16,6 +16,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        // initial tab view controlelr
+        let tabBarController = RCMDTabBarController()
+        
+        // initial explore view controller
+        let exploreViewController = ExploreViewController()
+        let exploreNavigationController = UINavigationController(rootViewController: exploreViewController)
+        exploreNavigationController.tabBarItem.title = NSLocalizedString("explore", comment: "")
+        
+        // initial top list view controller
+        let topListViewController = TopRatedTableViewController()
+        let topListNavigationController = UINavigationController(rootViewController: topListViewController)
+        let topListStr = NSLocalizedString("top_rated", comment: "")
+        topListNavigationController.tabBarItem.title = topListStr
+        
+        // initial user info view controller
+        let userViewController = UserInfoViewController()
+        let userInfoNavigationController = UINavigationController(rootViewController: userViewController)
+        let userCenterStr = NSLocalizedString("user_center", comment: "")
+        userInfoNavigationController.tabBarItem.title = userCenterStr
+        
+        tabBarController.viewControllers = [exploreNavigationController, topListNavigationController, userInfoNavigationController]
+        window?.rootViewController = tabBarController
+        
+        
         return true
     }
 
