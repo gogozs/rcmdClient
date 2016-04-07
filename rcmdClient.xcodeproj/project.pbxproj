@@ -25,7 +25,6 @@
 		E49A2A521C54D97C00FF7DD5 /* rcmdClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49A2A511C54D97C00FF7DD5 /* rcmdClientTests.swift */; };
 		E49A2A5D1C54D97C00FF7DD5 /* rcmdClientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49A2A5C1C54D97C00FF7DD5 /* rcmdClientUITests.swift */; };
 		E4B618291C5C5BB200AB5E6F /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4B618261C5C5BB200AB5E6F /* SVProgressHUD.framework */; };
-		E4B6182A1C5C5BB200AB5E6F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4B618271C5C5BB200AB5E6F /* Alamofire.framework */; };
 		E4B6182B1C5C5BB200AB5E6F /* PINCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4B618281C5C5BB200AB5E6F /* PINCache.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,7 +69,6 @@
 		E49A2A5C1C54D97C00FF7DD5 /* rcmdClientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rcmdClientUITests.swift; sourceTree = "<group>"; };
 		E49A2A5E1C54D97C00FF7DD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4B618261C5C5BB200AB5E6F /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
-		E4B618271C5C5BB200AB5E6F /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		E4B618281C5C5BB200AB5E6F /* PINCache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PINCache.framework; path = Carthage/Build/iOS/PINCache.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,7 +78,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4B618291C5C5BB200AB5E6F /* SVProgressHUD.framework in Frameworks */,
-				E4B6182A1C5C5BB200AB5E6F /* Alamofire.framework in Frameworks */,
 				E4B6182B1C5C5BB200AB5E6F /* PINCache.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -183,7 +180,6 @@
 			isa = PBXGroup;
 			children = (
 				E4B618261C5C5BB200AB5E6F /* SVProgressHUD.framework */,
-				E4B618271C5C5BB200AB5E6F /* Alamofire.framework */,
 				E4B618281C5C5BB200AB5E6F /* PINCache.framework */,
 			);
 			name = Frameworks;

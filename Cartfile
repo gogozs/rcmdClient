@@ -1,4 +1,2 @@
-github "Alamofire/Alamofire" ~> 3.0
 github "SVProgressHUD/SVProgressHUD"
 github "pinterest/PINCache"
-github "SwiftyJSON/SwiftyJSON"
