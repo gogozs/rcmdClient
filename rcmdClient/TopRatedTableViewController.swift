@@ -9,12 +9,30 @@
 import UIKit
 
 class TopRatedTableViewController: UITableViewController {
-
+    var topMovies: [String: AnyObject]?
+    var sortedMovies:[String]?
+    var movieDetails = [Int: [String: AnyObject]]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let topListStr = NSLocalizedString("top_rated", comment: "")
         self.title = topListStr
+        
+        DataManager.sharedInstance.getTopMovies(20) { responseObject, response, error in
+            if let _ = error {
+                
+            } else {
+                self.topMovies = responseObject as? [String: AnyObject]
+                
+                if let topMovies = self.topMovies {
+                    self.sortedMovies = topMovies.keys.sort {
+                        topMovies[$0] as! Double > topMovies[$1] as! Double
+                    }
+                    self.tableView.reloadData()
+                }
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,68 +43,90 @@ class TopRatedTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        if let topMovies = self.topMovies {
+            return topMovies.keys.count
+        } else {
+            return 0
+        }
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
-        return cell
+        let identifier = "top Movie"
+        var cell = self.tableView.dequeueReusableCellWithIdentifier(identifier) as? MovieCell
+        if cell == nil {
+            cell = MovieCell(reuseIdentifier: identifier)
+        }
+        
+        if let topMovies = self.topMovies, let sortedMovies = self.sortedMovies {
+            if let movieID = Int(sortedMovies[indexPath.row]) {
+                if movieDetails[movieID] == nil {
+                    DataManager.sharedInstance.getMovieDetail(movieID, completion: {[unowned self] jsonObject, response, error in
+                        if let movie = jsonObject as? [String: AnyObject] {
+                            self.movieDetails[movieID] = movie
+                            
+                            // update UI
+                            cell!.nameLabel.text = movie[movieNameKey] as? String
+                        }
+                    })
+                } else {
+                   cell!.nameLabel.text = movieDetails[movieID]?[movieNameKey] as? String
+                }
+                
+            }
+//            cell.textLabel?.text = movieID
+            if let rating = topMovies[sortedMovies[indexPath.row]] as? Double {
+                cell!.ratingLabel.text = String(format: "%.2f", rating)
+            }
+        }
+        
+        return cell!
     }
-    */
+    
+}
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+class MovieCell: UITableViewCell {
+    var nameLabel = UILabel()
+    var ratingLabel = UILabel()
+    
+    init(reuseIdentifier: String?) {
+        super.init(style: .Default, reuseIdentifier: reuseIdentifier)
+        
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        ratingLabel.translatesAutoresizingMaskIntoConstraints = false
+        ratingLabel.textColor = UIColor.grayColor()
+        
+        self.addSubview(self.nameLabel)
+        self.addSubview(self.ratingLabel)
+        
+        self.initNameLabel()
+        self.initRatingLabel()
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
+    
+    // MARK: -
+    func initNameLabel() {
+        
+        let leading = NSLayoutConstraint.init(item: self.nameLabel, attribute: .Leading, relatedBy: .Equal, toItem: self, attribute: .Leading, multiplier: 1.0, constant: 8)
+        let centerY = NSLayoutConstraint.init(item: self.nameLabel, attribute: .CenterY, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1.0, constant: 0)
+        
+        let trailing = NSLayoutConstraint.init(item: self.nameLabel, attribute: .Trailing, relatedBy: .LessThanOrEqual, toItem: self.ratingLabel, attribute: .Leading, multiplier: 1.0, constant: -8)
+        
+        trailing.priority = UILayoutPriorityDefaultHigh + 1
+        self.nameLabel.setContentCompressionResistancePriority(UILayoutPriorityDefaultHigh - 1, forAxis: .Horizontal)
+        NSLayoutConstraint.activateConstraints([leading, centerY, trailing])
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    
+    func initRatingLabel() {
+        let trailing = NSLayoutConstraint.init(item: self, attribute: .Trailing, relatedBy: .Equal, toItem: self.ratingLabel, attribute: .Trailing, multiplier: 1.0, constant: 8)
+        let centerY = NSLayoutConstraint.init(item: self.ratingLabel, attribute: .CenterY, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1.0, constant: 0)
+        
+        NSLayoutConstraint.activateConstraints([trailing, centerY])
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

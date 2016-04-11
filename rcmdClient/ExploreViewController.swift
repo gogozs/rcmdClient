@@ -17,7 +17,7 @@ class ExploreViewController: UITableViewController {
         let exploreStr = NSLocalizedString("explore", comment: "")
         self.title = exploreStr
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Search, target: self, action: Selector.init("searchButtonClicked:"))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Search, target: self, action: #selector(ExploreViewController.searchButtonClicked(_:)))
     }
 
     override func didReceiveMemoryWarning() {

@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "AE55798B03D19D9AF460455EC71C0DCDDBE40086",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "AE55798B03D19D9AF460455EC71C0DCDDBE40086" : 0,
+    "00EFC9087A2B8921F274CA7F184F1E2A1660085A" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "8F283605-95B9-49B9-8681-250E103C4452",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "AE55798B03D19D9AF460455EC71C0DCDDBE40086" : "rcmdClient\/",
+    "00EFC9087A2B8921F274CA7F184F1E2A1660085A" : "rcmdServer\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "rcmdClient",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "rcmdClient.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/gogozs\/rcmdServer.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "00EFC9087A2B8921F274CA7F184F1E2A1660085A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/gogozs\/rcmdClient.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "AE55798B03D19D9AF460455EC71C0DCDDBE40086"
+    }
+  ]
+}
