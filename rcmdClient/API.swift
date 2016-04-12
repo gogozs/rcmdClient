@@ -12,7 +12,7 @@ let API_URL = "http://0.0.0.0:8181"
 
 // MARK: - Get methods
 let getTopNMovies = "top_n_movies"
-let getUserUserCF = "userUserCF"
+let getUserUserCFKey = "userUserCF"
 let getItemItemCF = "itemItemCF"
 let getMovieWithID = "movie/id"
 let getMovieWithName = "movie/name"

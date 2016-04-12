@@ -18,4 +18,8 @@ class DataManager {
     func getMovieDetail(id: Int, completion: (AnyObject?, NSURLResponse?, NSError?) -> Void) {
         URLSession.GET("\(getMovieWithID)/\(id)", completion: completion)
     }
+    
+    func getUserUserCF(userID: Int, completion: (AnyObject?, NSURLResponse?, NSError?) -> Void) {
+        URLSession.GET("\(getUserUserCFKey)/\(userID)", completion: completion)
+    }
 }
