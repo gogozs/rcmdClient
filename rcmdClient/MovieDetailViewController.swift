@@ -8,16 +8,35 @@
 
 import UIKit
 
-class MovieDetailViewController: UITableViewController {
+let movieDetailCellIdentifier = "similar movie cell identifier"
 
+class MovieDetailViewController: UITableViewController {
+    var movieID: Int
+    var similarMovies: [[String: AnyObject]]?
+
+    init(style: UITableViewStyle, movieID: Int) {
+        self.movieID = movieID
+        
+        super.init(style: style)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.title = "基于项目的协同过滤推荐"
+        
+        DataManager.sharedInstance.getItemItemCF(movieID, count: 5) { [unowned self] jsonObject, response, error in
+            self.similarMovies = jsonObject as? [[String: AnyObject]]
+            
+            if self.similarMovies != nil {
+               self.tableView.reloadData()
+            }
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,23 +48,69 @@ class MovieDetailViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        if let _ = similarMovies?.count {
+            return 2
+        } else {
+            return 1
+        }
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        switch section {
+        case 0:
+            return 1
+        case 1:
+            return similarMovies!.count
+        default:
+            break
+        }
+        
         return 0
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
+        let cell = MovieCell(reuseIdentifier: movieDetailCellIdentifier)
+        
+        switch indexPath.section {
+        case 0:
+            DataManager.sharedInstance.getMovieDetail(movieID, completion: { jsonObject, response, error in
+                if let movie = jsonObject as? [String: AnyObject] {
+                    // update UI
+                    cell.nameLabel.text = movie[movieNameKey] as? String
+                }
+                })
+            break
+        case 1:
+            let movie = similarMovies![indexPath.row]
+            DataManager.sharedInstance.getMovieDetail(movie[movieIDKey] as! Int, completion: {jsonObject, response, error in
+                if let movie = jsonObject as? [String: AnyObject] {
+                    // update UI
+                    cell.nameLabel.text = movie[movieNameKey] as? String
+                }
+                })
+            cell.ratingLabel.text = String(format:"相似度 %.4f", movie["similarity"] as! Double)
+            break
+        default:
+            break
+        }
 
         return cell
     }
-    */
+ 
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            break
+        case 1:
+            return "相似的电影"
+        default:
+            break
+        }
+        
+        return ""
+    }
 
     /*
     // Override to support conditional editing of the table view.

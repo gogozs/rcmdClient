@@ -86,14 +86,21 @@ class TopRatedTableViewController: UITableViewController {
         return cell!
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let movieID = sortedMovies![indexPath.row]
+        
+        let vc = MovieDetailViewController.init(style: .Grouped, movieID: Int(movieID)!)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 class MovieCell: UITableViewCell {
     var nameLabel = UILabel()
     var ratingLabel = UILabel()
     
-    init(reuseIdentifier: String?) {
-        super.init(style: .Default, reuseIdentifier: reuseIdentifier)
+    convenience init(reuseIdentifier: String?) {
+        self.init(style: .Default, reuseIdentifier: reuseIdentifier)
         
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         ratingLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -104,6 +111,10 @@ class MovieCell: UITableViewCell {
         
         self.initNameLabel()
         self.initRatingLabel()
+    }
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: .Default, reuseIdentifier: reuseIdentifier)
     }
     
     required init?(coder aDecoder: NSCoder) {

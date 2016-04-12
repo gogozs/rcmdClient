@@ -8,9 +8,11 @@
 
 import Foundation
 
+typealias NetworkCompletion = (AnyObject?, NSURLResponse?, NSError?) -> Void
+
 class URLSession: NSURLSession {
     
-    class func GET(method: String, completion: (AnyObject?, NSURLResponse?, NSError?) -> Void) -> NSURLSessionDataTask {
+    class func GET(method: String, completion: NetworkCompletion) -> NSURLSessionDataTask {
         
         let dataTask = URLSession.sharedSession().dataTaskWithURL(NSURL.init(string: "\(API_URL)/\(method)")!,completionHandler: {
             (let data: NSData?, let response: NSURLResponse?, let error: NSError?) in

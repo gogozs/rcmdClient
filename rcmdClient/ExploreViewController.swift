@@ -65,6 +65,12 @@ class ExploreViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let movie = movies![indexPath.row]
+        
+        let vc = MovieDetailViewController.init(style: .Grouped, movieID: movie["id"] as! Int)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     // MARK: - Button Actions
     func searchButtonClicked(sender: UIBarButtonItem) {
         let searchResultsViewController = SearchResultsViewController()

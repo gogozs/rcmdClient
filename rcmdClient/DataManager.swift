@@ -8,18 +8,23 @@
 
 import Foundation
 
+
 class DataManager {
     static let sharedInstance = DataManager()
     
-    func getTopMovies(count: Int, completion: (AnyObject?, NSURLResponse?, NSError?) -> Void) {
+    func getTopMovies(count: Int, completion: NetworkCompletion) {
         URLSession.GET("\(getTopNMovies)/\(count)", completion: completion)
     }
     
-    func getMovieDetail(id: Int, completion: (AnyObject?, NSURLResponse?, NSError?) -> Void) {
+    func getMovieDetail(id: Int, completion: NetworkCompletion) {
         URLSession.GET("\(getMovieWithID)/\(id)", completion: completion)
     }
     
-    func getUserUserCF(userID: Int, completion: (AnyObject?, NSURLResponse?, NSError?) -> Void) {
+    func getUserUserCF(userID: Int, completion: NetworkCompletion) {
         URLSession.GET("\(getUserUserCFKey)/\(userID)", completion: completion)
+    }
+    
+    func getItemItemCF(itemID: Int, count: Int, completion: NetworkCompletion) {
+        URLSession.GET("\(getItemItemCFKey)/\(itemID)/\(count)", completion: completion)
     }
 }
