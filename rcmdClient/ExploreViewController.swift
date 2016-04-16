@@ -8,12 +8,16 @@
 
 import UIKit
 
+private let searchCellIdentifier = "search cell"
+
 class ExploreViewController: UITableViewController {
     var searchController: MovieSearchController!
     var movies: [[String: AnyObject]]?
+    var searchResultsViewController: SearchResultsViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.definesPresentationContext = true
         
         let exploreStr = NSLocalizedString("explore", comment: "")
         self.title = exploreStr
@@ -33,6 +37,11 @@ class ExploreViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
+        
+        
+        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: searchCellIdentifier)
+        
+        self.definesPresentationContext = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,11 +57,15 @@ class ExploreViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        if let count = movies?.count {
-            return count
-        } else {
-            return 0
+        if tableView == self.tableView {
+            if let count = movies?.count {
+                return count
+            } else {
+                return 0
+            }
         }
+        
+        return 0
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -63,21 +76,33 @@ class ExploreViewController: UITableViewController {
         cell.ratingLabel.text = String(format: "%.2f",  movie["prediction"] as! Double)
         
         return cell
+        
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let movie = movies![indexPath.row]
+        var id: Int?
+        if (tableView == self.tableView) {
+            let movie = movies![indexPath.row]
+            id = movie["id"] as? Int
+            
+        }
         
-        let vc = MovieDetailViewController.init(style: .Grouped, movieID: movie["id"] as! Int)
-        self.navigationController?.pushViewController(vc, animated: true)
+        if let id = id {
+            let vc = MovieDetailViewController.init(style: .Grouped, movieID: id)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
+    
     // MARK: - Button Actions
     func searchButtonClicked(sender: UIBarButtonItem) {
-        let searchResultsViewController = SearchResultsViewController()
+        self.searchResultsViewController = SearchResultsViewController()
         
         self.searchController = MovieSearchController(searchResultsController: searchResultsViewController)
         
         self.searchController.searchResultsUpdater = searchResultsViewController
+        print("\(self.searchController.presentingViewController)")
         self.presentViewController(searchController, animated: true, completion: nil)
+        print("\(self.searchController.presentingViewController)")
     }
 }
+

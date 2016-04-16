@@ -27,4 +27,8 @@ class DataManager {
     func getItemItemCF(itemID: Int, count: Int, completion: NetworkCompletion) {
         URLSession.GET("\(getItemItemCFKey)/\(itemID)/\(count)", completion: completion)
     }
+    
+    func searchMoviesWithKeyword(keyowrd: String, completion: NetworkCompletion) {
+        URLSession.GET("\(getMovieWithName)/\(keyowrd)", completion: completion)
+    }
 }

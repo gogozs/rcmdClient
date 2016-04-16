@@ -3,9 +3,7 @@
 //  rcmdClient
 //
 //  Created by Song Zhou on 4/7/16.
-//  Copyright © 2016 Song Zhou. All rights reserved.
-//
-
+//  Copyright © 2016 Song Zhou. All rights
 import Foundation
 
 typealias NetworkCompletion = (AnyObject?, NSURLResponse?, NSError?) -> Void
@@ -14,7 +12,11 @@ class URLSession: NSURLSession {
     
     class func GET(method: String, completion: NetworkCompletion) -> NSURLSessionDataTask {
         
-        let dataTask = URLSession.sharedSession().dataTaskWithURL(NSURL.init(string: "\(API_URL)/\(method)")!,completionHandler: {
+        let urlStr =  "\(API_URL)/" + "\(method)".stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.whitespaceCharacterSet().invertedSet)!
+        
+        let url = NSURL.init(string: urlStr)!
+        
+        let dataTask = URLSession.sharedSession().dataTaskWithURL(url,completionHandler: {
             (let data: NSData?, let response: NSURLResponse?, let error: NSError?) in
             var responseObject: AnyObject?
             if let _ = error {

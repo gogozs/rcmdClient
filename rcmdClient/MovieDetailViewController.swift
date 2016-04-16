@@ -29,6 +29,7 @@ class MovieDetailViewController: UITableViewController {
 
         self.title = "基于项目的协同过滤推荐"
         
+        /// @todo prematrue dealloc when viewDisappear but data load
         DataManager.sharedInstance.getItemItemCF(movieID, count: 5) { [unowned self] jsonObject, response, error in
             self.similarMovies = jsonObject as? [[String: AnyObject]]
             
