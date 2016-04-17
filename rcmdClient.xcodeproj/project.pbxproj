@@ -29,6 +29,8 @@
 		E48712091CBBDD48004ABAC0 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48712081CBBDD48004ABAC0 /* Math.swift */; };
 		E487120B1CBBDDEF004ABAC0 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = E487120A1CBBDDEF004ABAC0 /* Global.swift */; };
 		E487120C1CBBE73B004ABAC0 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42051DB1CB6A1EE005E1182 /* API.swift */; };
+		E491FDF11CC38D9F0046A834 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42051D91CB6A0D3005E1182 /* DataManager.swift */; };
+		E491FDF21CC38E810046A834 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = E487120A1CBBDDEF004ABAC0 /* Global.swift */; };
 		E49A2A3B1C54D97B00FF7DD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49A2A3A1C54D97B00FF7DD5 /* AppDelegate.swift */; };
 		E49A2A441C54D97B00FF7DD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E49A2A431C54D97B00FF7DD5 /* Assets.xcassets */; };
 		E49A2A471C54D97B00FF7DD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E49A2A451C54D97B00FF7DD5 /* LaunchScreen.storyboard */; };
@@ -398,10 +400,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E45F85631C8D0365008E25D5 /* MovieSearchController.swift in Sources */,
+				E491FDF11CC38D9F0046A834 /* DataManager.swift in Sources */,
 				E49A2A521C54D97C00FF7DD5 /* rcmdClientTests.swift in Sources */,
 				E42051DE1CB6A81B005E1182 /* APITest.swift in Sources */,
 				E42051D81CB6A058005E1182 /* URLSession.swift in Sources */,
 				E487120C1CBBE73B004ABAC0 /* API.swift in Sources */,
+				E491FDF21CC38E810046A834 /* Global.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

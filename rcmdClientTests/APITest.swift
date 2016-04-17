@@ -36,4 +36,20 @@ class APITest: XCTestCase {
 //        }
 //        self.waitForExpectationsWithTimeout(3.0, handler: nil)
 //    }
+    
+//    func testModifyRating() {
+//        let expect = self.expectationWithDescription("modify rating")
+//        
+//        DataManager.sharedInstance.modifyRatingWithUserID(250, movieID: 1, rating: 4, completion: { jsonObject, response, error in
+//            if let _ = error {
+//                
+//            } else {
+//                
+//            }
+//            
+//            expect.fulfill()
+//        })
+//        
+//        self.waitForExpectationsWithTimeout(3.0, handler: nil)
+//    }
 }

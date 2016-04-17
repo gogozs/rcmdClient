@@ -122,6 +122,33 @@ class MovieDetailViewController: UITableViewController {
         
         return ""
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        switch indexPath.section {
+        case 0:
+            let alert = UIAlertController.init(title: "修改电影评分", message: nil, preferredStyle: .ActionSheet)
+            for i in 1...5 {
+                alert.addAction(UIAlertAction.init(title: "\(i)", style: .Default, handler: { action in
+                    DataManager.sharedInstance.modifyRatingWithUserID(250, movieID: self.movieID, rating: Int(action.title!)!, completion: { jsonObject, reposne, error in
+                        print("\(jsonObject!)")
+                        if let result = jsonObject as? [String: AnyObject]{
+                            dispatch_async(dispatch_get_main_queue(), {
+                                if let _ = result[ratingKey] {
+                                    self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+                                }
+                            })
+                        }
+                    })
+                }))
+            }
+            alert.addAction(UIAlertAction.init(title: "取消", style: .Cancel, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+            break
+        default:
+            return
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.

@@ -35,4 +35,8 @@ class DataManager {
     func getRatingWithUserID(id: Int, movieID: Int, completion: NetworkCompletion) {
         URLSession.GET(getRating, parameters: [movieIDKey: movieID, userIDKey: id], completion: completion)
     }
+    
+    func modifyRatingWithUserID(id: Int, movieID: Int, rating: Int, completion: NetworkCompletion) {
+        URLSession.POST(postRating, parameters: [movieIDKey: movieID, userIDKey: id, ratingKey: rating], completion: completion)
+    }
 }
