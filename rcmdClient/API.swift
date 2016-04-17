@@ -16,6 +16,7 @@ let getUserUserCFKey = "userUserCF"
 let getItemItemCFKey = "itemItemCF"
 let getMovieWithID = "movie/id"
 let getMovieWithName = "movie/name"
+let getRating = "rating"
 
 // MARK: - POST methods
 let postRating = "rating"

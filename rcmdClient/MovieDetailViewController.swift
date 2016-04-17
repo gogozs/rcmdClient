@@ -82,6 +82,16 @@ class MovieDetailViewController: UITableViewController {
                     cell.nameLabel.text = movie[movieNameKey] as? String
                 }
                 })
+            DataManager.sharedInstance.getRatingWithUserID(250, movieID: movieID, completion: { jsonObject, response, error in
+                    if let result = jsonObject as? [String: AnyObject] {
+                        if let score = result[ratingKey] {
+                           cell.ratingLabel.text = "你的评分 " + String(score)
+                        } else {
+                           cell.ratingLabel.text = "还没有评分"
+                        }
+                    } else {
+                    }
+                })
             break
         case 1:
             let movie = similarMovies![indexPath.row]

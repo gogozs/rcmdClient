@@ -38,4 +38,27 @@ class URLSession: NSURLSession {
         return dataTask
     }
     
+    class func GET(method: String, parameters: [String: AnyObject], completion: NetworkCompletion) -> NSURLSessionDataTask {
+        let methodStr = method + "/" + parameterStrFromDcit(parameters)
+        return URLSession.GET(methodStr, completion: completion)
+    }
+    
+}
+
+extension URLSession {
+    class func parameterStrFromDcit(dict: [String: AnyObject]) -> String {
+        var i = 0
+        
+        var result = ""
+        for (key, value) in dict {
+            i += 1
+            result += "\(key)=\(value)"
+            
+            if i != dict.count {
+                result += "&"
+            }
+        }
+        
+        return result
+    }
 }

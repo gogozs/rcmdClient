@@ -31,4 +31,8 @@ class DataManager {
     func searchMoviesWithKeyword(keyowrd: String, completion: NetworkCompletion) {
         URLSession.GET("\(getMovieWithName)/\(keyowrd)", completion: completion)
     }
+    
+    func getRatingWithUserID(id: Int, movieID: Int, completion: NetworkCompletion) {
+        URLSession.GET(getRating, parameters: [movieIDKey: movieID, userIDKey: id], completion: completion)
+    }
 }
