@@ -41,7 +41,6 @@ class ExploreViewController: UITableViewController {
         
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: searchCellIdentifier)
         
-        self.definesPresentationContext = true
     }
 
     override func didReceiveMemoryWarning() {
