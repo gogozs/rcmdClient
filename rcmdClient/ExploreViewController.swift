@@ -34,7 +34,9 @@ class ExploreViewController: UITableViewController {
             self.movies = jsonObject as? [[String: AnyObject]]
             
             if self.movies != nil {
-                self.tableView.reloadData()
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.tableView.reloadData()
+                })
             }
         }
         

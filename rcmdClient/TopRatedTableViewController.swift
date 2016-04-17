@@ -69,7 +69,9 @@ class TopRatedTableViewController: UITableViewController {
                             self.movieDetails[movieID] = movie
                             
                             // update UI
-                            cell!.nameLabel.text = movie[movieNameKey] as? String
+                            dispatch_async(dispatch_get_main_queue(), {
+                                cell!.nameLabel.text = movie[movieNameKey] as? String
+                            })
                         }
                     })
                 } else {
